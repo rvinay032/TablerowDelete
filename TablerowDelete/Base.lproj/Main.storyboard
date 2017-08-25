@@ -33,19 +33,29 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P20-iL-tht">
-                                                    <rect key="frame" x="8" y="37" width="359" height="80"/>
+                                                    <rect key="frame" x="8" y="37" width="279" height="80"/>
                                                     <color key="backgroundColor" red="0.176014225248459" green="0.92925044432757464" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9p-2g-baK">
+                                                    <rect key="frame" x="312" y="62" width="55" height="30"/>
+                                                    <state key="normal" title="DELETE"/>
+                                                    <connections>
+                                                        <action selector="deletBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H3m-iL-ZrZ"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" red="0.84281069023517896" green="0.9481414823287464" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
+                                                <constraint firstItem="a9p-2g-baK" firstAttribute="centerY" secondItem="P20-iL-tht" secondAttribute="centerY" id="1ZB-mg-B2w"/>
+                                                <constraint firstItem="a9p-2g-baK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="XH4-iA-VJS" secondAttribute="leading" constant="20" symbolic="YES" id="9rH-Gb-f1H"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="P20-iL-tht" secondAttribute="bottom" constant="46.5" id="I4H-dd-rNf"/>
                                                 <constraint firstItem="P20-iL-tht" firstAttribute="top" secondItem="XH4-iA-VJS" secondAttribute="topMargin" constant="29" id="RUY-Oq-6jQ"/>
                                                 <constraint firstItem="P20-iL-tht" firstAttribute="leading" secondItem="XH4-iA-VJS" secondAttribute="leading" constant="8" id="dJO-90-kDA"/>
-                                                <constraint firstItem="P20-iL-tht" firstAttribute="centerX" secondItem="XH4-iA-VJS" secondAttribute="centerX" id="qfa-vH-qr1"/>
+                                                <constraint firstAttribute="trailing" secondItem="a9p-2g-baK" secondAttribute="trailing" constant="8" id="mb2-Ew-QVu"/>
+                                                <constraint firstItem="P20-iL-tht" firstAttribute="centerX" secondItem="XH4-iA-VJS" secondAttribute="centerX" constant="-40" id="qfa-vH-qr1"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -74,12 +84,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="citiesLabel" destination="KDA-5b-kcs" id="wGw-ED-e15"/>
                         <outlet property="dataTableView" destination="cqf-8Z-UkP" id="HAq-WR-RJg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-6703" y="-1452"/>
+            <point key="canvasLocation" x="-8850" y="-1633"/>
         </scene>
     </scenes>
 </document>

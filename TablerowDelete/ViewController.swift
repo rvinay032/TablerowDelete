@@ -9,8 +9,20 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var citiesLabel: UILabel!
+    
+    @IBAction func deletBtn(_ sender: UIButton) {
+        let temp = getCell(sender)
+//        self.dataTableView.indexPath(for: temp)
+        guard let indexPath = self.dataTableView.indexPath(for: temp) else {fatalError()}
+        self.dataArray.remove(at: indexPath.row)
+        dataTableView.reloadData()
+        
+    }
+    
     //======= Data Array==========
-    var dataArray = ["10","20","30","40","50","60","70","80","90","100"]
+    var dataArray = ["Delhi","Noida","Gurgaon","Mumbai","Saharanpur","Surat","Pune","Goa","Ahmedabad","hyderabad"]
     //==== Outlet of table View======
     @IBOutlet weak var dataTableView: UITableView!
     
@@ -63,6 +75,25 @@ extension ViewController: UITableViewDataSource,UITableViewDelegate{
         return [share, change, delete]
     }
     
+    func getCell(_ sender: UIButton) -> UITableViewCell {
+        var cell: UIView = sender
+        //----------jab tak cell superview nh milta-------- superview mil gaya
+        while !(cell is CellData) {
+            if let super_view = cell.superview {
+                cell = super_view
+            } else {}
+            
+            
+        }
+        guard let tableCell = cell as? CellData
+            else
+        {
+            fatalError()
+        }
+        return tableCell
+    }
+    
+    
 }
     
 
@@ -70,6 +101,8 @@ extension ViewController: UITableViewDataSource,UITableViewDelegate{
 // ====== cell class==========
 class CellData: UITableViewCell{
     
+    
+   
     @IBOutlet weak var dataLabel: UILabel!
     
 }
